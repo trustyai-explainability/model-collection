@@ -1,6 +1,6 @@
 # `explainer-test-a`
 
-This repository contains a simple linear regression model trained on a synthetic dataset. 
+This repository contains a simple linear regression model trained on a synthetic dataset generated within the `train.py` file. 
 The dataset includes two features with varying degrees of impact on the output variable.
 
 ## Dataset Description
