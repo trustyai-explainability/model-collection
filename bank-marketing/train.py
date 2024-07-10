@@ -53,13 +53,11 @@ model = Sequential([
 
 model.compile(optimizer=Adam(learning_rate=0.001), loss='binary_crossentropy', metrics=['accuracy'])
 
-
 history = model.fit(X_train_prep, y_train, epochs=50, batch_size=32, validation_split=0.2, verbose=1)
 
 # Evaluate model
 test_loss, test_accuracy = model.evaluate(X_test_prep, y_test)
 print(f"Test accuracy: {test_accuracy:.4f}")
-
 
 # Save model
 tf.keras.models.save_model(model, "model.h5")
