@@ -7,3 +7,4 @@ trustyai==0.6.0
 bokeh
 pandas
 joblib==1.4.0
+tensorflow==2.16.2
