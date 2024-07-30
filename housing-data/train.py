@@ -13,13 +13,12 @@ X_train, X_test, y_train, y_test = train_test_split(
 
 model = xgb.XGBRegressor(
     n_estimators=100,
-    max_depth=6,
+    max_depth=7,
     learning_rate=0.1,
     min_child_weight=1,
     subsample=0.8,
     colsample_bytree=0.8,
     random_state=42,
-    device="cpu",
 )
 model.fit(X_train, y_train)
 
