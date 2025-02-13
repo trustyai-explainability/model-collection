@@ -38,7 +38,7 @@ spec:
   predictor:
     model:
       modelFormat:
-        name: openvino
+        name: openvino_ir
       runtime: $RUNTIME_NAME
       storage:
         key: aws-connection-minio-data-connection
