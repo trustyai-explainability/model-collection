@@ -25,11 +25,8 @@ EPOCHS = 16
 
 # === DATA LOADERS =================================================================================
 def get_loan_data():
-    app = pd.read_csv("data/application_record.csv")
-    credit = pd.read_csv("data/credit_record.csv")
+    data = pd.read_csv(os.path.join("data", "data_truncated.csv"))
 
-    data = app.merge(credit, on="ID")
-    data = data[:10000]
     data[PROTECTED_ATTRIBUTE] = data["CODE_GENDER"].apply(lambda x: 1 if x == "M" else 0)
     data['Owns Car?'] = data["FLAG_OWN_CAR"].apply(lambda x: 1 if x == "Y" else 0)
     data['Owns Realty?'] = data["FLAG_OWN_REALTY"].apply(lambda x: 1 if x == "Y" else 0)
