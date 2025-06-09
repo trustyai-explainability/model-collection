@@ -25,3 +25,11 @@ Each model should be contained in a separate directory within the repository. Th
 
 
 Any requirements for running the model should be included in a common `requirements.txt` file in the root of the repository.
+
+
+
+# Changelog
+
+## 2025-06-05
+- Updated dependency: `scikit-learn==1.6.1`
+- Note: New model serialization format.
