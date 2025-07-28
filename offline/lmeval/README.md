@@ -54,8 +54,7 @@ This will:
 1. Delete existing data (with confirmation prompt)
 2. Download the flan model
 3. Download the ARC-Easy dataset
-4. Build a Docker image with the assets
-5. Push the image to the registry
+4. Build a container image with the assets
 
 #### Build Flan Model with 20 Newsgroups Dataset
 ```bash
@@ -66,8 +65,19 @@ This will:
 1. Delete existing data (with confirmation prompt)
 2. Download the flan model
 3. Download the 20 Newsgroups dataset
-4. Build a Docker image with the assets
-5. Push the image to the registry
+4. Build a container image with the assets
+
+#### Push Images to Registry
+
+After building, you can push the images to the registry:
+
+```bash
+# Push flan model with ARC-Easy dataset
+make assets-push-flan-arceasy
+
+# Push flan model with 20 Newsgroups dataset
+make assets-push-flan-20newsgroups
+```
 
 ### Using Different Container Engines
 

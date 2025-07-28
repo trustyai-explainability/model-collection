@@ -9,6 +9,8 @@ help:
 	@echo "Available targets:"
 	@echo "  assets-build-flan-arceasy     - Build flan model with ARC-Easy dataset"
 	@echo "  assets-build-flan-20newsgroups - Build flan model with 20 Newsgroups dataset"
+	@echo "  assets-push-flan-arceasy      - Push flan model with ARC-Easy dataset"
+	@echo "  assets-push-flan-20newsgroups - Push flan model with 20 Newsgroups dataset"
 	@echo "  delete-data                   - Remove all data"
 	@echo "  download-flan                 - Download flan model"
 	@echo "  download-dataset-arc-easy     - Download ARC-Easy dataset"
@@ -46,10 +48,18 @@ download-dataset-20newsgroups:
 .PHONY: assets-build-flan-arceasy
 assets-build-flan-arceasy: delete-data download-flan download-dataset-arc-easy
 	$(CONTAINER_ENGINE) build -t $(IMAGE)-flan-arceasy:latest -f assets.Dockerfile .
-	$(CONTAINER_ENGINE) push $(IMAGE)-flan-arceasy:latest
 
 # Build flan model with 20 Newsgroups dataset
 .PHONY: assets-build-flan-20newsgroups
 assets-build-flan-20newsgroups: delete-data download-flan download-dataset-20newsgroups
 	$(CONTAINER_ENGINE) build -t $(IMAGE)-flan-20newsgroups:latest -f assets.Dockerfile .
+
+# Push flan model with ARC-Easy dataset
+.PHONY: assets-push-flan-arceasy
+assets-push-flan-arceasy:
+	$(CONTAINER_ENGINE) push $(IMAGE)-flan-arceasy:latest
+
+# Push flan model with 20 Newsgroups dataset
+.PHONY: assets-push-flan-20newsgroups
+assets-push-flan-20newsgroups:
 	$(CONTAINER_ENGINE) push $(IMAGE)-flan-20newsgroups:latest 
