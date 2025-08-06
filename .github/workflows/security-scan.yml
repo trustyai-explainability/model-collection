@@ -9,7 +9,7 @@ on:
 
 jobs:
   trivy-scan:
-    name: Trivy Scan
+    name: Trivy
     runs-on: ubuntu-latest
     permissions:
       contents: read
@@ -61,7 +61,7 @@ jobs:
         continue-on-error: true
 
   bandit-scan:
-    name: Bandit Scan
+    name: Bandit
     runs-on: ubuntu-latest
     permissions:
       security-events: write
